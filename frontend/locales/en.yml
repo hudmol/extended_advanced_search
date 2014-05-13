@@ -1,0 +1,34 @@
+en:
+  enumerations:
+    staff_field_query_field:
+      accession_condition_description_u_utext: Condition Description
+      accession_content_description_u_utext: Content Description
+      accession_general_note_u_utext: General Note
+      accession_id_0_u_ustr: Fiscal Year
+      accession_id_1_u_ustr: Department
+      accession_inventory_u_utext: Inventory
+      accession_provenance_u_utext: Provenance
+      acquisition_type: Acquisition Type
+      agent_roles_u_ustr: Role
+      agents: Agent
+      created_by: Created By
+      enum_2_u_ustr: BRBL Owner
+      extent_container_summary_u_utext: Container Summary
+      extent_number_u_ustr: Number
+      extent_physical_details_u_utext: Physical Details
+      extent_type_u_ustr: Extent Type
+      last_modified_by: Last Modified By
+      string_3_u_ustr: Place of Publication
+      text_1_u_utext: Call Number
+      text_2_u_utext: Title Main Entry
+      text_3_u_utext: Monographic Series
+      text_4_u_utext: Plating Information
+      text_5_u_utext: Bibliographic Citation
+    boolean_field_query_field:
+      access_restrictions: Access Restrictions?
+      has_external_documents_u_ubool: External Documents?
+      has_rights_statements_u_ubool: Rights Statements?
+      restrictions_apply: Restrictions Apply?
+      use_restrictions: Use Restrictions?
+    date_field_query_field:
+      accession_date: Accession Date

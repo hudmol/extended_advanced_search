@@ -1,0 +1,60 @@
+class CommonIndexer
+
+  self.add_indexer_initialize_hook do |indexer|
+    # Index extra Accession fields
+    indexer.add_document_prepare_hook {|doc, record|
+      if doc['primary_type'] == 'accession'
+        # Accession Fields
+        doc['accession_id_0_u_ustr'] = record['record']['id_0']
+        doc['accession_id_1_u_ustr'] = record['record']['id_1']
+        doc['accession_content_description_u_utext'] = record['record']['content_description']
+        doc['accession_condition_description_u_utext'] = record['record']['condition_description']
+        doc['accession_inventory_u_utext'] = record['record']['inventory']
+        doc['accession_provenance_u_utext'] = record['record']['provenance']
+        doc['accession_general_note_u_utext'] = record['record']['general_note']
+
+        # Accession Dates
+        # start ??
+        # end ??
+      end
+    }
+
+    # Index extra fields for all records
+    indexer.add_document_prepare_hook {|doc, record|
+      # linked agent roles
+      if record['record']['linked_agents']
+        doc['agent_roles_u_ustr'] = record['record']['linked_agents'].collect{|link| link['role']}
+      end
+
+      # record has external documents?
+      doc['has_external_documents_u_ubool'] =  (record['record']['external_documents'] || []).length > 0
+
+      # record has rights statements?
+      doc['has_rights_statements_u_ubool'] =  (record['record']['rights_statements'] || []).length > 0
+
+      # Extent
+      if record['record']['extents']
+        doc['extent_number_u_ustr'] = record['record']['extents'].collect{|extent| extent["number"]}.compact
+        doc['extent_type_u_ustr'] = record['record']['extents'].collect{|extent| extent["extent_type"]}.compact
+        doc['extent_container_summary_u_utext'] = record['record']['extents'].collect{|extent| extent["container_summary"]}.compact
+        doc['extent_physical_details_u_utext'] = record['record']['extents'].collect{|extent| extent["physical_details"]}.compact
+      end
+    }
+
+    # Index user defined fields
+    indexer.add_document_prepare_hook {|doc, record|
+      if record['record']['user_defined']
+        doc['string_3_u_ustr'] = record['record']['user_defined']['string_3']
+
+        doc['text_1_u_utext'] = record['record']['user_defined']['text_1']
+        doc['text_2_u_utext'] = record['record']['user_defined']['text_2']
+        doc['text_3_u_utext'] = record['record']['user_defined']['text_3']
+        doc['text_4_u_utext'] = record['record']['user_defined']['text_4']
+        doc['text_5_u_utext'] = record['record']['user_defined']['text_5']
+
+        doc['enum_2_u_ustr'] = record['record']['user_defined']['enum_2']
+      end
+    }
+  end
+
+end
