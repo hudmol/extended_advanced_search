@@ -13,9 +13,10 @@ class CommonIndexer
         doc['accession_provenance_u_utext'] = record['record']['provenance']
         doc['accession_general_note_u_utext'] = record['record']['general_note']
 
-        # Accession Dates
-        # start ??
-        # end ??
+        accession_date = fuzzy_time_parse(record['record']['accession_date'])
+        if accession_date
+          doc['accession_date_u_udate'] = accession_date
+        end
       end
     }
 
@@ -39,6 +40,23 @@ class CommonIndexer
         doc['extent_container_summary_u_utext'] = record['record']['extents'].collect{|extent| extent["container_summary"]}.compact
         doc['extent_physical_details_u_utext'] = record['record']['extents'].collect{|extent| extent["physical_details"]}.compact
       end
+
+      # Dates
+      if record['record']['dates']
+        doc['date_begin_u_udate'] = record['record']['dates'].collect{|date|
+          fuzzy_time_parse(date['begin'])
+        }.compact
+        doc['date_end_u_udate'] = record['record']['dates'].collect{|date|
+          fuzzy_time_parse(date['end'])
+        }.compact
+      end
+
+      # Collection Management Record
+      if record['record']['collection_management']
+        doc['collection_management_processing_priority_u_ustr'] = record['record']['collection_management']['processing_priority']
+        doc['collection_management_processing_status_u_ustr'] = record['record']['collection_management']['processing_status']
+        doc['collection_management_processors_u_utext'] = record['record']['collection_management']['processors']
+      end
     }
 
     # Index user defined fields
@@ -55,6 +73,26 @@ class CommonIndexer
         doc['enum_2_u_ustr'] = record['record']['user_defined']['enum_2']
       end
     }
+  end
+
+  def self.fuzzy_time_parse(time_str)
+    return if time_str.nil?
+
+    begin
+      time = if time_str.length == 4 && time_str[/^\d\d\d\d/]
+        Time.parse("#{time_str}-01-01")
+
+      elsif time_str.length == 7 && time_str[/^\d\d\d\d-\d\d/]
+        Time.parse("#{time_str}-01")
+
+      else
+        Time.parse(time_str)
+      end
+
+      "#{time.strftime("%Y-%m-%d")}T00:00:00Z"
+    rescue
+      nil
+    end
   end
 
 end

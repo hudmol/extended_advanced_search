@@ -24,6 +24,9 @@ en:
       text_3_u_utext: Monographic Series
       text_4_u_utext: Plating Information
       text_5_u_utext: Bibliographic Citation
+      collection_management_processing_priority_u_ustr: Priority
+      collection_management_processing_status_u_ustr: Processing Status
+      collection_management_processors_u_utext: Processors
     boolean_field_query_field:
       access_restrictions: Access Restrictions?
       has_external_documents_u_ubool: External Documents?
@@ -31,4 +34,6 @@ en:
       restrictions_apply: Restrictions Apply?
       use_restrictions: Use Restrictions?
     date_field_query_field:
-      accession_date: Accession Date
+      accession_date_u_udate: Accession Date
+      date_begin_u_udate: Begin
+      date_end_u_udate: End

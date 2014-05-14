@@ -30,6 +30,9 @@ Sequel.migration do
       "text_4_u_utext",
       "text_5_u_utext",
       "enum_2_u_ustr",
+      "collection_management_processing_priority_u_ustr",
+      "collection_management_processing_status_u_ustr",
+      "collection_management_processors_u_utext"
     ].each do |field|
       self[:enumeration_value].insert(:enumeration_id => enum, :value => field)
     end
@@ -53,10 +56,11 @@ Sequel.migration do
     enum = self[:enumeration].filter(:name => 'date_field_query_field').select(:id)
     [
       # from core
-      "accession_date",
 
       # from plugin
-
+      "date_begin_u_udate",
+      "date_end_u_udate",
+      "accession_date_u_udate",
     ].each do |field|
       self[:enumeration_value].insert(:enumeration_id => enum, :value => field)
     end
