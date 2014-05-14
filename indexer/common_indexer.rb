@@ -1,4 +1,5 @@
 class CommonIndexer
+  self.add_attribute_to_resolve("linked_events")
 
   self.add_indexer_initialize_hook do |indexer|
     # Index extra Accession fields
@@ -56,6 +57,28 @@ class CommonIndexer
         doc['collection_management_processing_priority_u_ustr'] = record['record']['collection_management']['processing_priority']
         doc['collection_management_processing_status_u_ustr'] = record['record']['collection_management']['processing_status']
         doc['collection_management_processors_u_utext'] = record['record']['collection_management']['processors']
+      end
+
+      # Linked Events
+      if record['record']['linked_events']
+        event_begin = []
+        event_end = []
+        event_type = []
+        event_outcome = []
+
+        record['record']['linked_events'].each do |event|
+          if event['_resolved']['date']
+            event_begin << fuzzy_time_parse(event['_resolved']['date']['begin'])
+            event_end << fuzzy_time_parse(event['_resolved']['date']['end'])
+          end
+          event_type << event['_resolved']['event_type']
+          event_outcome << event['_resolved']['outcome']
+        end
+
+        doc['event_begin_u_udate'] = event_begin.compact
+        doc['event_end_u_udate'] = event_end.compact
+        doc['event_type_u_ustr'] = event_type.compact
+        doc['event_outcome_u_ustr'] = event_outcome.compact
       end
     }
 

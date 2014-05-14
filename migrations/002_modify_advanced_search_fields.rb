@@ -32,7 +32,9 @@ Sequel.migration do
       "enum_2_u_ustr",
       "collection_management_processing_priority_u_ustr",
       "collection_management_processing_status_u_ustr",
-      "collection_management_processors_u_utext"
+      "collection_management_processors_u_utext",
+      "event_type_u_ustr",
+      "event_outcome_u_ustr",
     ].each do |field|
       self[:enumeration_value].insert(:enumeration_id => enum, :value => field)
     end
@@ -61,6 +63,8 @@ Sequel.migration do
       "date_begin_u_udate",
       "date_end_u_udate",
       "accession_date_u_udate",
+      "event_begin_u_udate",
+      "event_end_u_udate",
     ].each do |field|
       self[:enumeration_value].insert(:enumeration_id => enum, :value => field)
     end

@@ -27,6 +27,8 @@ en:
       collection_management_processing_priority_u_ustr: Priority
       collection_management_processing_status_u_ustr: Processing Status
       collection_management_processors_u_utext: Processors
+      event_type_u_ustr: Event Type
+      event_outcome_u_ustr: Event Outcome
     boolean_field_query_field:
       access_restrictions: Access Restrictions?
       has_external_documents_u_ubool: External Documents?
@@ -37,3 +39,5 @@ en:
       accession_date_u_udate: Accession Date
       date_begin_u_udate: Begin
       date_end_u_udate: End
+      event_begin_u_udate: Event Begin
+      event_end_u_udate: Event End
