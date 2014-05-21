@@ -35,6 +35,17 @@ en:
       has_rights_statements_u_ubool: Rights Statements?
       restrictions_apply: Restrictions Apply?
       use_restrictions: Use Restrictions?
+      material_type_works_of_art_u_ubool: Material Type - Works of Art?
+      material_type_audiovisual_materials_u_ubool: Material Type - Audiovisual Materials?
+      material_type_books_u_ubool: Material Type - Books?
+      material_type_electronic_documents_u_ubool: Material Type - Electric Documents?
+      material_type_games_u_ubool: Material Type - Games?
+      material_type_microforms_u_ubool: Material Type - Microforms?
+      material_type_maps_u_ubool: Material Type - Maps?
+      material_type_manuscripts_u_ubool: Material Type - Manuscripts?
+      material_type_photographs_u_ubool: Material Type - Photographs?
+      material_type_realia_u_ubool: Material Type - Realia?
+      material_type_serials_u_ubool: Material Type - Serials?
     date_field_query_field:
       accession_date_u_udate: Accession Date
       date_begin_u_udate: Begin
