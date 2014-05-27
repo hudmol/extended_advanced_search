@@ -1,43 +1,44 @@
 en:
-  enumerations:
-    staff_field_query_field:
-      accession_condition_description_u_utext: Condition Description
-      accession_content_description_u_utext: Content Description
-      accession_general_note_u_utext: General Note
-      accession_id_0_u_ustr: Fiscal Year
-      accession_id_1_u_ustr: Department
-      accession_inventory_u_utext: Inventory
-      accession_provenance_u_utext: Provenance
-      acquisition_type: Acquisition Type
-      agent_roles_u_ustr: Role
+  advanced_search:
+    text:
+      accession_condition_description: Condition Description
+      accession_content_description: Content Description
+      accession_general_note: General Note
+      accession_id_0: Fiscal Year
+      accession_id_1: Department
+      accession_inventory: Inventory
+      accession_provenance: Provenance
       agents: Agent
+      collection_management_processors: Processors
       created_by: Created By
-      enum_2_u_ustr: BRBL Owner
-      extent_container_summary_u_utext: Container Summary
-      extent_number_u_ustr: Number
-      extent_physical_details_u_utext: Physical Details
-      extent_type_u_ustr: Extent Type
+      extent_container_summary: Container Summary
+      extent_number: Number
+      extent_physical_details: Physical Details
       last_modified_by: Last Modified By
-      string_3_u_ustr: Place of Publication
-      text_1_u_utext: Call Number
-      text_2_u_utext: Title Main Entry
-      text_3_u_utext: Monographic Series
-      text_4_u_utext: Plating Information
-      text_5_u_utext: Bibliographic Citation
-      collection_management_processing_priority_u_ustr: Priority
-      collection_management_processing_status_u_ustr: Processing Status
-      collection_management_processors_u_utext: Processors
-      event_type_u_ustr: Event Type
-      event_outcome_u_ustr: Event Outcome
-    boolean_field_query_field:
+      user_defined_string_3: Place of Publication
+      user_defined_text_1: Call Number
+      user_defined_text_2: Title Main Entry
+      user_defined_text_3: Monographic Series
+      user_defined_text_4: Plating Information
+      user_defined_text_5: Bibliographic Citation
+    date:
+      accession_date: Accession Date
+      date_begin: Begin
+      date_end: End
+      event_begin: Event Begin
+      event_end_u_udate: Event End
+    boolean:
       access_restrictions: Access Restrictions?
-      has_external_documents_u_ubool: External Documents?
-      has_rights_statements_u_ubool: Rights Statements?
+      has_external_documents: External Documents?
+      has_rights_statements: Rights Statements?
       restrictions_apply: Restrictions Apply?
       use_restrictions: Use Restrictions?
-    date_field_query_field:
-      accession_date_u_udate: Accession Date
-      date_begin_u_udate: Begin
-      date_end_u_udate: End
-      event_begin_u_udate: Event Begin
-      event_end_u_udate: Event End
+    enum:
+      accession_acquisition_type: Acquisition Type
+      collection_management_processing_priority: Priority
+      collection_management_processing_status: Processing Status
+      event_event_type: Event Type
+      event_outcome: Event Outcome
+      extent_extent_type: Extent Type
+      linked_agent_role: Role
+      user_defined_enum_2: BRBL Owner
