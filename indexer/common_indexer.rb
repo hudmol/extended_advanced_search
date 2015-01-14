@@ -85,7 +85,7 @@ class CommonIndexer
     # Index user defined fields
     indexer.add_document_prepare_hook {|doc, record|
       if record['record']['user_defined']
-        doc['string_3_u_ustr'] = record['record']['user_defined']['string_3']
+        doc['string_3_u_utext'] = record['record']['user_defined']['string_3']
 
         doc['text_1_u_utext'] = record['record']['user_defined']['text_1']
         doc['text_2_u_utext'] = record['record']['user_defined']['text_2']

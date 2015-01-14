@@ -12,7 +12,7 @@ AdvancedSearch.define_field(:name => 'accession_general_note', :type => :text, :
 AdvancedSearch.define_field(:name => 'extent_number', :type => :text, :visibility => [:staff], :solr_field => 'extent_number_u_ustr')
 AdvancedSearch.define_field(:name => 'extent_container_summary', :type => :text, :visibility => [:staff], :solr_field => 'extent_container_summary_u_utext')
 AdvancedSearch.define_field(:name => 'extent_physical_details', :type => :text, :visibility => [:staff], :solr_field => 'extent_physical_details_u_utext')
-AdvancedSearch.define_field(:name => 'user_defined_string_3', :type => :text, :visibility => [:staff], :solr_field => 'string_3_u_ustr')
+AdvancedSearch.define_field(:name => 'user_defined_string_3', :type => :text, :visibility => [:staff], :solr_field => 'string_3_u_utext')
 AdvancedSearch.define_field(:name => 'user_defined_text_1', :type => :text, :visibility => [:staff], :solr_field => 'text_1_u_utext')
 AdvancedSearch.define_field(:name => 'user_defined_text_2', :type => :text, :visibility => [:staff], :solr_field => 'text_2_u_utext')
 AdvancedSearch.define_field(:name => 'user_defined_text_3', :type => :text, :visibility => [:staff], :solr_field => 'text_3_u_utext')
