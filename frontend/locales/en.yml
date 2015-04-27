@@ -27,12 +27,15 @@ en:
       date_end: End
       event_begin: Event Begin
       event_end_u_udate: Event End
+      user_defined_date_2: Accession Completed Date
     boolean:
       access_restrictions: Access Restrictions?
       has_external_documents: External Documents?
       has_rights_statements: Rights Statements?
       restrictions_apply: Restrictions Apply?
       use_restrictions: Use Restrictions?
+      user_defined_boolean_1: Authorization Received?
+      user_defined_boolean_2: Record Reviewed?
     enum:
       accession_acquisition_type: Acquisition Type
       collection_management_processing_priority: Priority
