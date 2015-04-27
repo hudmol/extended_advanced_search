@@ -96,7 +96,7 @@ class CommonIndexer
         doc['enum_2_u_ustr'] = record['record']['user_defined']['enum_2']
 
         if doc['primary_type'] == 'accession'
-          doc['date_2_u_udate'] = record['record']['user_defined']['date_2']
+          doc['date_2_u_udate'] = fuzzy_time_parse(record['record']['user_defined']['date_2'])
           doc['boolean_1_u_ubool'] = record['record']['user_defined']['boolean_1']
           doc['boolean_2_u_ubool'] = record['record']['user_defined']['boolean_2']
         end
