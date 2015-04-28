@@ -26,6 +26,8 @@ AdvancedSearch.define_field(:name => 'access_restrictions', :type => :boolean, :
 AdvancedSearch.define_field(:name => 'use_restrictions', :type => :boolean, :visibility => [:staff], :solr_field => 'use_restrictions')
 AdvancedSearch.define_field(:name => 'has_external_documents', :type => :boolean, :visibility => [:staff], :solr_field => 'has_external_documents')
 AdvancedSearch.define_field(:name => 'has_rights_statements', :type => :boolean, :visibility => [:staff], :solr_field => 'has_rights_statements_u_ubool')
+AdvancedSearch.define_field(:name => 'user_defined_boolean_1', :type => :boolean, :visibility => [:staff], :solr_field => 'boolean_1_u_ubool')
+AdvancedSearch.define_field(:name => 'user_defined_boolean_2', :type => :boolean, :visibility => [:staff], :solr_field => 'boolean_2_u_ubool')
 
 # Dates
 AdvancedSearch.define_field(:name => 'date_begin', :type => :date, :visibility => [:staff], :solr_field => 'date_begin_u_udate')
@@ -33,6 +35,7 @@ AdvancedSearch.define_field(:name => 'date_end', :type => :date, :visibility => 
 AdvancedSearch.define_field(:name => 'accession_date', :type => :date, :visibility => [:staff], :solr_field => 'accession_date_u_udate')
 AdvancedSearch.define_field(:name => 'event_begin', :type => :date, :visibility => [:staff], :solr_field => 'event_begin_u_udate')
 AdvancedSearch.define_field(:name => 'event_end', :type => :date, :visibility => [:staff], :solr_field => 'event_end_u_udate')
+AdvancedSearch.define_field(:name => 'user_defined_date_2', :type => :date, :visibility => [:staff], :solr_field => 'date_2_u_udate')
 
 # Enums
 AdvancedSearch.define_field(:name => 'accession_acquisition_type', :type => :enum, :visibility => [:staff], :solr_field => 'acquisition_type')
