@@ -1,5 +1,5 @@
 # Text fields
-AdvancedSearch.define_field(:name => 'agents', :type => :text, :visibility => [:staff], :solr_field => 'agents')
+AdvancedSearch.define_field(:name => 'agents', :type => :text, :visibility => [:staff], :solr_field => 'agents_text')
 AdvancedSearch.define_field(:name => 'created_by', :type => :text, :visibility => [:staff], :solr_field => 'created_by')
 AdvancedSearch.define_field(:name => 'last_modified_by', :type => :text, :visibility => [:staff], :solr_field => 'last_modified_by')
 AdvancedSearch.define_field(:name => 'accession_id_0', :type => :text, :visibility => [:staff], :solr_field => 'accession_id_0_u_ustr')
