@@ -12,8 +12,8 @@ Sequel.migration do
                       .filter(:enumeration_value__value => ['source', 'subject'])
                       .where { Sequel.~(id_column => nil) }
                       .select(id_column)
+                      .distinct
                       .map {|row| row[id_column]}
-                      .uniq
 
       self[record_type].filter(:id => ids_to_update).update(:system_mtime => Time.now)
     end
