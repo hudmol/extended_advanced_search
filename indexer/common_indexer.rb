@@ -92,6 +92,10 @@ class CommonIndexer
         doc['event_type_u_ustr'] = event_type.compact
         doc['event_outcome_u_ustr'] = event_outcome.compact
       end
+
+      if doc['primary_type'] == 'event'
+        doc['event_outcome_u_ustr'] = ASUtils.wrap(record['record']['outcome']).compact
+      end
     }
 
     # Index user defined fields
