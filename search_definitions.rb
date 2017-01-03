@@ -29,7 +29,7 @@ end
 # Booleans
 AdvancedSearch.define_field(:name => 'access_restrictions', :type => :boolean, :visibility => [:staff], :solr_field => 'access_restrictions')
 AdvancedSearch.define_field(:name => 'use_restrictions', :type => :boolean, :visibility => [:staff], :solr_field => 'use_restrictions')
-AdvancedSearch.define_field(:name => 'has_external_documents', :type => :boolean, :visibility => [:staff], :solr_field => 'has_external_documents')
+AdvancedSearch.define_field(:name => 'has_external_documents', :type => :boolean, :visibility => [:staff], :solr_field => 'has_external_documents_u_ubool')
 AdvancedSearch.define_field(:name => 'has_rights_statements', :type => :boolean, :visibility => [:staff], :solr_field => 'has_rights_statements_u_ubool')
 AdvancedSearch.define_field(:name => 'user_defined_boolean_1', :type => :boolean, :visibility => [:staff], :solr_field => 'boolean_1_u_ubool')
 AdvancedSearch.define_field(:name => 'user_defined_boolean_2', :type => :boolean, :visibility => [:staff], :solr_field => 'boolean_2_u_ubool')
