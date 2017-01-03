@@ -1,3 +1,5 @@
+require_relative 'linked_agent_fields'
+
 # Text fields
 AdvancedSearch.define_field(:name => 'agents', :type => :text, :visibility => [:staff], :solr_field => 'agents_text')
 AdvancedSearch.define_field(:name => 'created_by', :type => :text, :visibility => [:staff], :solr_field => 'created_by')
@@ -19,6 +21,10 @@ AdvancedSearch.define_field(:name => 'user_defined_text_3', :type => :text, :vis
 AdvancedSearch.define_field(:name => 'user_defined_text_4', :type => :text, :visibility => [:staff], :solr_field => 'text_4_u_utext')
 AdvancedSearch.define_field(:name => 'user_defined_text_5', :type => :text, :visibility => [:staff], :solr_field => 'text_5_u_utext')
 AdvancedSearch.define_field(:name => 'collection_management_processors', :type => :text, :visibility => [:staff], :solr_field => 'collection_management_processors_u_utext')
+
+LinkedAgentFields::LINKED_AGENT_INDEXED_ROLES.each do |role|
+  AdvancedSearch.define_field(:name => "agents_#{role}_role", :type => :text, :visibility => [:staff], :solr_field => "agents_text_#{role}_role_u_utext")
+end
 
 # Booleans
 AdvancedSearch.define_field(:name => 'restrictions_apply', :type => :boolean, :visibility => [:staff], :solr_field => 'restrictions_apply')
