@@ -9,6 +9,8 @@ en:
       accession_inventory: Inventory
       accession_provenance: Provenance
       agents: Agent
+      agents_source_role: Agent (Source Role)
+      agents_subject_role: Agent (Subject Role)
       collection_management_processors: Processors
       created_by: Created By
       extent_container_summary: Container Summary

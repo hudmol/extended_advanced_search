@@ -1,4 +1,7 @@
+require_relative '../linked_agent_fields'
+
 class CommonIndexer
+
   self.add_attribute_to_resolve("linked_events")
 
   self.add_indexer_initialize_hook do |indexer|
@@ -26,6 +29,15 @@ class CommonIndexer
       # linked agent roles
       if record['record']['linked_agents']
         doc['agent_roles_u_ustr'] = record['record']['linked_agents'].collect{|link| link['role']}
+
+        record['record']['linked_agents'].each do |link|
+          role = link['role']
+
+          if ::LinkedAgentFields::LINKED_AGENT_INDEXED_ROLES.include?(role)
+            doc["agents_text_#{role}_role_u_utext"] ||= []
+            doc["agents_text_#{role}_role_u_utext"] << link['_resolved']['display_name']['sort_name']
+          end
+        end
       end
 
       # record has external documents?
