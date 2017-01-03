@@ -21,6 +21,8 @@ class CommonIndexer
         if accession_date
           doc['accession_date_u_udate'] = accession_date
         end
+
+        doc['accession_title_u_utext'] = record['record']['title']
       end
     }
 
