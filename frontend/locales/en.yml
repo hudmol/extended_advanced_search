@@ -34,7 +34,6 @@ en:
       access_restrictions: Access Restrictions?
       has_external_documents: External Documents?
       has_rights_statements: Rights Statements?
-      restrictions_apply: Restrictions Apply?
       use_restrictions: Use Restrictions?
       user_defined_boolean_1: Authorization Received?
       user_defined_boolean_2: Record Reviewed?

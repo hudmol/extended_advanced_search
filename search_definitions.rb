@@ -27,7 +27,6 @@ LinkedAgentFields::LINKED_AGENT_INDEXED_ROLES.each do |role|
 end
 
 # Booleans
-AdvancedSearch.define_field(:name => 'restrictions_apply', :type => :boolean, :visibility => [:staff], :solr_field => 'restrictions_apply')
 AdvancedSearch.define_field(:name => 'access_restrictions', :type => :boolean, :visibility => [:staff], :solr_field => 'access_restrictions')
 AdvancedSearch.define_field(:name => 'use_restrictions', :type => :boolean, :visibility => [:staff], :solr_field => 'use_restrictions')
 AdvancedSearch.define_field(:name => 'has_external_documents', :type => :boolean, :visibility => [:staff], :solr_field => 'has_external_documents')
