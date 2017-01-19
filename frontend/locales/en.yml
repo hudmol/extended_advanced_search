@@ -24,6 +24,7 @@ en:
       user_defined_text_4: Plating Information
       user_defined_text_5: Bibliographic Citation
       accession_title: Accession Title
+      archival_object_title: Archival Object Title
     date:
       accession_date: Accession Date
       date_begin: Begin

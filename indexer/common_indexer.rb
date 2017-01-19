@@ -26,6 +26,13 @@ class CommonIndexer
       end
     }
 
+    # Index extra Archival Object fields
+    indexer.add_document_prepare_hook {|doc, record|
+      if doc['primary_type'] == 'archival_object'
+        doc['archival_object_title_u_utext'] = record['record']['title']
+      end
+    }
+
     # Index extra fields for all records
     indexer.add_document_prepare_hook {|doc, record|
       # linked agent roles
