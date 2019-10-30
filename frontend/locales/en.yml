@@ -30,7 +30,7 @@ en:
       date_begin: Begin
       date_end: End
       event_begin: Event Begin
-      event_end_u_udate: Event End
+      event_end: Event End
       user_defined_date_2: Accession Completed Date
     boolean:
       access_restrictions: Access Restrictions?
